@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="">
+  <title>数字逻辑设计-part-1 | 7att1ce's blog</title>
+  <meta name="author" content="7att1ce" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="" />
+  
+  <meta name="description" content="第1章 数字逻辑电路设计导论1.1 数字逻辑电路的基本概念一、模拟信号和数字信号 模拟信号：在时间和数值上连续变化的信号 时间上连续，幅值上也连续 例如：温度、正弦电压   数字信号：在时间和数值上变化是离散的信号 时间上离散，辐值上整数化 例如：人数、物件的个数    二、模拟电路和数值电路 模拟电路：工作在模拟信号下的电子电路 数字电路：工作在数字信号下的电子电路。具体讲，数字电路就是对数字信">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字逻辑设计-part-1">
+<meta property="og:url" content="https://7att1ce.github.io/2020/09/14/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1-part-1/index.html">
+<meta property="og:site_name" content="7att1ce&#39;s blog">
+<meta property="og:description" content="第1章 数字逻辑电路设计导论1.1 数字逻辑电路的基本概念一、模拟信号和数字信号 模拟信号：在时间和数值上连续变化的信号 时间上连续，幅值上也连续 例如：温度、正弦电压   数字信号：在时间和数值上变化是离散的信号 时间上离散，辐值上整数化 例如：人数、物件的个数    二、模拟电路和数值电路 模拟电路：工作在模拟信号下的电子电路 数字电路：工作在数字信号下的电子电路。具体讲，数字电路就是对数字信">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://7att1ce.github.io/null">
+<meta property="article:published_time" content="2020-09-14T09:53:34.000Z">
+<meta property="article:modified_time" content="2021-05-20T07:59:10.474Z">
+<meta property="article:author" content="7att1ce">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://7att1ce.github.io/null">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="7att1ce's blog" type="application/atom+xml">
+</head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/friends/"><i class="fa fa-paw"></i>好伙伴</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>链接</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://candinya.com">作者博客</a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/Candinya/Kratos-Rebirth">项目链接</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">7att1ce&#39;s blog</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>7att1ce&#39;s blog</h2> <br />
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                
+                    <h1 class="kratos-entry-title text-center">数字逻辑设计-part-1</h1>
+                
+                
+                <ul class="kratos-post-meta text-center">
+                    <li><i class="fa fa-calendar"></i> 2020-09-14</li>
+                    <li><i class="fa fa-user"></i> 作者 7att1ce</li>
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~2.31K
+                        
+                        字
+                    </li>
+                    
+                </ul>
+            </header>
+            <div class="kratos-post-content">
+                <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                    本文最后编辑于 <time datetime="1621497550474"></time> 前，其中的内容可能需要更新。
+                </div>
+                
+                <hr />
+                <h2 id="第1章-数字逻辑电路设计导论"><a href="#第1章-数字逻辑电路设计导论" class="headerlink" title="第1章 数字逻辑电路设计导论"></a>第1章 数字逻辑电路设计导论</h2><h3 id="1-1-数字逻辑电路的基本概念"><a href="#1-1-数字逻辑电路的基本概念" class="headerlink" title="1.1 数字逻辑电路的基本概念"></a>1.1 数字逻辑电路的基本概念</h3><h4 id="一、模拟信号和数字信号"><a href="#一、模拟信号和数字信号" class="headerlink" title="一、模拟信号和数字信号"></a>一、模拟信号和数字信号</h4><ul>
+<li>模拟信号：在时间和数值上连续变化的信号<ul>
+<li>时间上连续，幅值上也连续</li>
+<li>例如：温度、正弦电压</li>
+</ul>
+</li>
+<li>数字信号：在时间和数值上变化是离散的信号<ul>
+<li>时间上离散，辐值上整数化</li>
+<li>例如：人数、物件的个数</li>
+</ul>
+</li>
+</ul>
+<h4 id="二、模拟电路和数值电路"><a href="#二、模拟电路和数值电路" class="headerlink" title="二、模拟电路和数值电路"></a>二、模拟电路和数值电路</h4><ul>
+<li>模拟电路：工作在模拟信号下的电子电路</li>
+<li>数字电路：工作在数字信号下的电子电路。具体讲，数字电路就是对数字信号进行产生、存储、传输、变换、运算及处理的电子电路</li>
+</ul>
+<h4 id="三、数字电路中“0”、“1”表示"><a href="#三、数字电路中“0”、“1”表示" class="headerlink" title="三、数字电路中“0”、“1”表示"></a>三、数字电路中“0”、“1”表示</h4><h5 id="1-电平的概念"><a href="#1-电平的概念" class="headerlink" title="1. 电平的概念"></a>1. 电平的概念</h5><ul>
+<li>电压（或电流）的水平</li>
+<li>物理上对应一定的电压（或电流）的范围</li>
+<li>“0”、“1”没有量的概念</li>
+</ul>
+<h5 id="2-正逻辑与负逻辑"><a href="#2-正逻辑与负逻辑" class="headerlink" title="2. 正逻辑与负逻辑"></a>2. 正逻辑与负逻辑</h5><ul>
+<li>正逻辑：高电平为逻辑“1”，低电平为逻辑“0”</li>
+<li>负逻辑：低电平为逻辑“1”，高电平为逻辑“0”</li>
+</ul>
+<h4 id="四、数字电路的特点"><a href="#四、数字电路的特点" class="headerlink" title="四、数字电路的特点"></a>四、数字电路的特点</h4><ul>
+<li>有较强的稳定性、可靠性和抗干扰能力</li>
+<li>具有算数运算能力和逻辑运算能力，可进行逻辑推理和逻辑判断</li>
+<li>电路结构简单，便于制造和集成</li>
+<li>使用方便灵活</li>
+</ul>
+<h3 id="1-2-数制和码制"><a href="#1-2-数制和码制" class="headerlink" title="1.2 数制和码制"></a>1.2 数制和码制</h3><h4 id="一、数制：多位数码中每一位的构成以及低位向高位的进位原则"><a href="#一、数制：多位数码中每一位的构成以及低位向高位的进位原则" class="headerlink" title="一、数制：多位数码中每一位的构成以及低位向高位的进位原则"></a>一、数制：多位数码中每一位的构成以及低位向高位的进位原则</h4><h5 id="1-数值的一般性结论"><a href="#1-数值的一般性结论" class="headerlink" title="1. 数值的一般性结论"></a>1. 数值的一般性结论</h5><ul>
+<li>R进制有R个数码，基数是R；运算规则是逢R进一</li>
+<li>如果一个R进制数M包含n位整数和m位小数，<br>$$<br>\begin{aligned}<br>(M)<em>R &amp; = (a</em>{n-1}a_{n-2} \cdots a_1a_0.a_{-1}a_{-2} \cdots a_{-m})_R \<pre><code>  &amp; = a_&#123;n-1&#125;R^&#123;n-1&#125;+a_&#123;n-2&#125;R^&#123;n-2&#125;+ \cdots +a_1R^1+a_0R^0+a_&#123;-1&#125;R^&#123;-1&#125;+a_&#123;-2&#125;R^&#123;-2&#125;+ \cdots +a_&#123;-m&#125;R^&#123;-m&#125; \\
+  &amp; = \left( \sum^&#123;n-1&#125;_&#123;i=-m&#125;&#123;a_iR^i&#125; \right)_R
+</code></pre>
+\end{aligned}<br>$$</li>
+</ul>
+<h5 id="2-几种常用数制"><a href="#2-几种常用数制" class="headerlink" title="2. 几种常用数制"></a>2. 几种常用数制</h5><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">十进制</th>
+<th align="center">二进制</th>
+<th align="center">八进制</th>
+<th align="center">十六进制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">数码</td>
+<td align="center">$0,1,\cdots,9$</td>
+<td align="center">$0,1$</td>
+<td align="center">$0,1,\cdots$,7</td>
+<td align="center">$0,1,\cdots,9,A,B,\cdots F$</td>
+</tr>
+<tr>
+<td align="center">基数</td>
+<td align="center">10</td>
+<td align="center">2</td>
+<td align="center">8</td>
+<td align="center">16</td>
+</tr>
+<tr>
+<td align="center">进位规则</td>
+<td align="center">逢10进1</td>
+<td align="center">逢2进1</td>
+<td align="center">逢8进1</td>
+<td align="center">逢16进1</td>
+</tr>
+<tr>
+<td align="center">第i位的权值</td>
+<td align="center">$10^i$</td>
+<td align="center">$2^i$</td>
+<td align="center">$8^i$</td>
+<td align="center">$16^i$</td>
+</tr>
+</tbody></table>
+<h5 id="3-数制间的转换"><a href="#3-数制间的转换" class="headerlink" title="3. 数制间的转换"></a>3. 数制间的转换</h5><ul>
+<li>任意进制数转换为十进制数：按权展开，相加即可得</li>
+<li>十进制数转换为任意进制数<ul>
+<li>整数部分：除基数R倒取余法</li>
+<li>小数部分：乘基数R取整法</li>
+</ul>
+</li>
+<li>二进制数和八进制数、十六进制数间的转换：三位二进制数相当一位八进制数，四位二进制数相当于一位十六进制数<ol>
+<li>二进制转换为八进制、十六进制<ul>
+<li>整数部分三（四）位一组，不足左补零</li>
+<li>小数部分三（四）位一组，不足右补零</li>
+</ul>
+</li>
+<li>八进制、十六进制数转换为二进制数<ul>
+<li>八进制数转二进制数：1位变三位</li>
+<li>十六进制数转二进制数：1位变四位</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="二、码制：用数码代表不同的事物或对象，称为代码。编制代码的原则，称为码制"><a href="#二、码制：用数码代表不同的事物或对象，称为代码。编制代码的原则，称为码制" class="headerlink" title="二、码制：用数码代表不同的事物或对象，称为代码。编制代码的原则，称为码制"></a>二、码制：用数码代表不同的事物或对象，称为代码。编制代码的原则，称为码制</h4><h5 id="1-二进制数编码的基本原则"><a href="#1-二进制数编码的基本原则" class="headerlink" title="1. 二进制数编码的基本原则"></a>1. 二进制数编码的基本原则</h5><ul>
+<li>用n位二进制数给N个对象进行编码时，应满足：$2^n \geq N$</li>
+</ul>
+<h5 id="2-几种常见的二进制数编码"><a href="#2-几种常见的二进制数编码" class="headerlink" title="2. 几种常见的二进制数编码"></a>2. 几种常见的二进制数编码</h5><ul>
+<li>二-十进制编码（BCD码）用二进制数给十进制数进行编码。应满足$2^n \geq N$</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">几种常见的BCD码</th>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+<th align="center">6</th>
+<th align="center">7</th>
+<th align="center">8</th>
+<th align="center">9</th>
+<th align="center">权</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">8421码</td>
+<td align="center">0000</td>
+<td align="center">0001</td>
+<td align="center">0010</td>
+<td align="center">0011</td>
+<td align="center">0100</td>
+<td align="center">0101</td>
+<td align="center">0110</td>
+<td align="center">0111</td>
+<td align="center">1000</td>
+<td align="center">1001</td>
+<td align="center">8421</td>
+</tr>
+<tr>
+<td align="center">余3码</td>
+<td align="center">0011</td>
+<td align="center">0100</td>
+<td align="center">0101</td>
+<td align="center">0110</td>
+<td align="center">0111</td>
+<td align="center">1000</td>
+<td align="center">1001</td>
+<td align="center">1010</td>
+<td align="center">1011</td>
+<td align="center">1100</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">2421码</td>
+<td align="center">0000</td>
+<td align="center">0001</td>
+<td align="center">0010</td>
+<td align="center">0011</td>
+<td align="center">0100</td>
+<td align="center">1011</td>
+<td align="center">1100</td>
+<td align="center">1101</td>
+<td align="center">1110</td>
+<td align="center">1111</td>
+<td align="center">2421</td>
+</tr>
+<tr>
+<td align="center">5421码</td>
+<td align="center">0000</td>
+<td align="center">0001</td>
+<td align="center">0010</td>
+<td align="center">0011</td>
+<td align="center">0100</td>
+<td align="center">1000</td>
+<td align="center">1001</td>
+<td align="center">1010</td>
+<td align="center">1011</td>
+<td align="center">1100</td>
+<td align="center">5421</td>
+</tr>
+<tr>
+<td align="center">余3循环码</td>
+<td align="center">0010</td>
+<td align="center">0110</td>
+<td align="center">0111</td>
+<td align="center">0101</td>
+<td align="center">0100</td>
+<td align="center">1100</td>
+<td align="center">1101</td>
+<td align="center">1111</td>
+<td align="center">1110</td>
+<td align="center">1010</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<ul>
+<li>格雷码（Gray码）：格雷码是一种典型的循环码<ul>
+<li>循环码特性<ol>
+<li>相邻性：任意两个相邻码组间仅有一位的状态不同</li>
+<li>循环性：首尾两个码组也具有相邻性</li>
+</ol>
+</li>
+<li>一种典型的格雷码：n位元的格雷码可以从n-1位元的格雷码以上下镜射后加上新位元的方式（上部分加0，下部分加1）快速的得到。两位格雷码为0，1，如表所示</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+<th align="center">6</th>
+<th align="center">7</th>
+<th align="center">8</th>
+<th align="center">9</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0000</td>
+<td align="center">0001</td>
+<td align="center">0011</td>
+<td align="center">0010</td>
+<td align="center">0110</td>
+<td align="center">0111</td>
+<td align="center">0101</td>
+<td align="center">0100</td>
+<td align="center">1100</td>
+<td align="center">1101</td>
+</tr>
+</tbody></table>
+<ul>
+<li>ASCII码（美国信息交换标准代码），采用7位二进制编码，用来表示128个字符</li>
+</ul>
+<h3 id="1-3-带符号数的代码表示"><a href="#1-3-带符号数的代码表示" class="headerlink" title="1.3 带符号数的代码表示"></a>1.3 带符号数的代码表示</h3><h4 id="一、有符号数"><a href="#一、有符号数" class="headerlink" title="一、有符号数"></a>一、有符号数</h4><ul>
+<li>用“0”表示“正”，用“1”表示“负”</li>
+<li>定义：符号数字化的数叫机器数，原先的数叫真值</li>
+<li>代码不表示小数点，默认位于数值前（定点小数）或数值后（定点小数）</li>
+<li>依据编码方案不同，机器数分为原码，补码，反码，移码</li>
+</ul>
+<h4 id="二、原码，反码，补码的转换方法"><a href="#二、原码，反码，补码的转换方法" class="headerlink" title="二、原码，反码，补码的转换方法"></a>二、原码，反码，补码的转换方法</h4><ul>
+<li>当真值为正时，原码，反码，补码不变</li>
+<li>当真值为负时，反码为原码除符号位取反，补码在原码的基础上末尾加一</li>
+</ul>
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://7att1ce.github.io/2020/09/14/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1-part-1/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://7att1ce.github.io/2020/09/14/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1-part-1/";
+            const title         = "「数字逻辑设计-part-1」";
+            const excerpt       = `第1章 数字逻辑电路设计导论1.1 数字逻辑电路的基本概念一、模拟信号和数字信号
+模拟信号：在时间和数值上连续变化的信号
+时间上连续，幅值上也连续
+例如：温度、正弦电压
+
+
+数字信号：在时间和数值上变化是离散的信号
+时间上离散，辐值上...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2021-05-20</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" 电路理论基础-part-1" href="/2020/09/14/电路理论基础-part-1/">&lt; 上一篇</a>
+                </div>
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" 信息论-part-1" href="/2020/09/14/信息论-part-1/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                
+
+            
+                
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2021/05/20/hello-world/"><i class="fa  fa-book"></i> Hello World</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/05/20/%E6%B4%A5%E9%97%A8%E6%9D%AF-2021-misc-wp/"><i class="fa  fa-book"></i> 津门杯 2021 misc wp</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/05/19/%E6%B4%A5%E9%97%A8%E6%9D%AF-2021-wp/"><i class="fa  fa-book"></i> 津门杯 2021 wp</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/05/19/CISCN-2021-wp/"><i class="fa  fa-book"></i> CISCN 2021 wp</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/05/19/%E6%95%B0%E8%AE%BA/"><i class="fa  fa-book"></i> 数论</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/CandyUnion"><i class="fa fa-telegram"></i></a></li>
+                        
+                        
+                        
+                        <li><a target="_blank" rel="me" href="https://nya.one/@Candinya"><i class="fa fa fa-share-alt-square"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/Candinya"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 7att1ce's blog 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by 7att1ce.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+<script async src="/js/candy.min.js"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="3204190542"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>
