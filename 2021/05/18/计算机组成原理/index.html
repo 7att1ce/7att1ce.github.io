@@ -24,7 +24,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://7att1ce.github.io/null">
 <meta property="article:published_time" content="2021-05-18T23:03:17.000Z">
-<meta property="article:modified_time" content="2021-05-24T16:19:00.298Z">
+<meta property="article:modified_time" content="2021-05-25T14:58:22.321Z">
 <meta property="article:author" content="7att1ce">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://7att1ce.github.io/null">
@@ -270,7 +270,7 @@ mjx-container[display="true"] + br {
                         <i class="fa fa-edit"></i> 
                         
                         
-                            ~4.16K
+                            ~5.13K
                         
                         字
                     </li>
@@ -279,7 +279,7 @@ mjx-container[display="true"] + br {
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1621873140298"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1621954702321"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
@@ -352,7 +352,85 @@ mjx-container[display="true"] + br {
 <li>指令在存储器内按顺序存放. 通常, 指令是顺序执行的, 在特定条件下, 可根据运算结果或根据设定的条件改变执行顺序</li>
 <li>机器以运算器为中心, 输入输出设备与存储器间的数据传送通过运算器来完成</li>
 </ol>
-<h4 id="1-2-2-计算机的硬件框图"><a href="#1-2-2-计算机的硬件框图" class="headerlink" title="1.2.2 计算机的硬件框图"></a>1.2.2 计算机的硬件框图</h4><h3 id="1-3-计算机硬件的主要技术指标"><a href="#1-3-计算机硬件的主要技术指标" class="headerlink" title="1.3 计算机硬件的主要技术指标"></a>1.3 计算机硬件的主要技术指标</h3><h3 id="1-4-本书结构"><a href="#1-4-本书结构" class="headerlink" title="1.4 本书结构"></a>1.4 本书结构</h3><h2 id="第2章-计算机的发展及应用-不考"><a href="#第2章-计算机的发展及应用-不考" class="headerlink" title="第2章 计算机的发展及应用(不考)"></a>第2章 计算机的发展及应用(不考)</h2><h2 id="第3章-系统总线"><a href="#第3章-系统总线" class="headerlink" title="第3章 系统总线"></a>第3章 系统总线</h2><h2 id="第4章-存储器"><a href="#第4章-存储器" class="headerlink" title="第4章 存储器"></a>第4章 存储器</h2><h2 id="第5章-输入输出系统"><a href="#第5章-输入输出系统" class="headerlink" title="第5章 输入输出系统"></a>第5章 输入输出系统</h2><h3 id="5-1-概述"><a href="#5-1-概述" class="headerlink" title="5.1 概述"></a>5.1 概述</h3><h4 id="5-1-1-输入输出系统的发展状况"><a href="#5-1-1-输入输出系统的发展状况" class="headerlink" title="5.1.1 输入输出系统的发展状况"></a>5.1.1 输入输出系统的发展状况</h4><ol>
+<h4 id="1-2-2-计算机的硬件框图"><a href="#1-2-2-计算机的硬件框图" class="headerlink" title="1.2.2 计算机的硬件框图"></a>1.2.2 计算机的硬件框图</h4><ol>
+<li>冯诺依曼计算机以运算器为中心, 现代计算机以存储器为中心, 详见书P119</li>
+<li>五大部件功能:<ol>
+<li>运算器用来完成算数和逻辑运算, 并将运算的中间结果暂存在运算器内</li>
+<li>存储器用来存放数据和程序</li>
+<li>控制器用来控制, 指挥程序和数据的输入, 运行以及处理运算结果</li>
+<li>输入设备用来将人们熟悉的信息形式转换为机器能识别的信息形式</li>
+<li>输出设备可将机器运算结果转换为人们熟悉的信息形式</li>
+</ol>
+</li>
+<li>运算器(ALU, 算术逻辑单元)和控制器(CU, 控制单元)合起来统称为中央处理器(CPU), 输入输出设备简称为I/O设备</li>
+<li>现代计算机可认为由三大部分组成: CPU, I/O设备, 主存储器(MM). CPU与主存储器合起来称为主机, I/O设备又称为外部设备</li>
+<li>存储器分为主存储器(主存)和辅助存储器(辅存)</li>
+</ol>
+<h4 id="1-2-3-计算机的工作步骤"><a href="#1-2-3-计算机的工作步骤" class="headerlink" title="1.2.3 计算机的工作步骤"></a>1.2.3 计算机的工作步骤</h4><ol>
+<li><p>上机前的准备: 建立数学模型, 确定计算方法, 编制解题程序</p>
+</li>
+<li><p>计算机的工作流程</p>
+<ol>
+<li><p>主存储器</p>
+<ol>
+<li>包括存储体M, 各种逻辑部件及控制电路等</li>
+<li>存储体由许多存储单元组成, 每个存储单元又包括若干个存储元件, 每个存储元件能寄存一位二进制代码0或1</li>
+<li>一个存储单元可存储一串二进制代码, 称这串二进制代码为一个存储字, 该位数成为存储字长. 存储单元按地址寻访</li>
+<li>MAR: 存储器地址寄存器, 反映存储单元的个数. MDR: 存储器数据寄存器, 反映存储字长</li>
+</ol>
+</li>
+<li><p>运算器</p>
+<ol>
+<li><p>运算器包括若干个寄存器和一个算术逻辑单元(ALU), 其中ACC为累加器, MQ为乘商寄存器, X为操作数寄存器, F为结果状态寄存器. 寄存器存放不同类别操作数情况如下:</p>
+<table>
+<thead>
+<tr>
+<th align="center">寄存器</th>
+<th align="center">加法</th>
+<th align="center">减法</th>
+<th align="center">乘法</th>
+<th align="center">除法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ACC</td>
+<td align="center">被加数及和</td>
+<td align="center">被减数及差</td>
+<td align="center">乘积高位</td>
+<td align="center">被除数及余数</td>
+</tr>
+<tr>
+<td align="center">MQ</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">乘数及乘积低位</td>
+<td align="center">商</td>
+</tr>
+<tr>
+<td align="center">X</td>
+<td align="center">加数</td>
+<td align="center">减数</td>
+<td align="center">被乘数</td>
+<td align="center">除数</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>加法操作过程: [M]-&gt;X; [ACC]+[X]-&gt;ACC</p>
+</li>
+<li><p>减法操作过程: [M]-&gt;X; [ACC]-[X]-&gt;ACC</p>
+</li>
+<li><p>乘法操作过程: [M]-&gt;MQ; [ACC]-&gt;X; 0-&gt;ACC; [X]*[MQ]-&gt;ACC//MQ (“//“表示两个寄存器串接)</p>
+</li>
+<li><p>除法操作过程: [M]-&gt;X; [ACC]/[X]-&gt;MQ; 余数R放在ACC中</p>
+</li>
+</ol>
+</li>
+<li><p>控制器</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="1-3-计算机硬件的主要技术指标"><a href="#1-3-计算机硬件的主要技术指标" class="headerlink" title="1.3 计算机硬件的主要技术指标"></a>1.3 计算机硬件的主要技术指标</h3><h3 id="1-4-本书结构"><a href="#1-4-本书结构" class="headerlink" title="1.4 本书结构"></a>1.4 本书结构</h3><h2 id="第2章-计算机的发展及应用-不考"><a href="#第2章-计算机的发展及应用-不考" class="headerlink" title="第2章 计算机的发展及应用(不考)"></a>第2章 计算机的发展及应用(不考)</h2><h2 id="第3章-系统总线"><a href="#第3章-系统总线" class="headerlink" title="第3章 系统总线"></a>第3章 系统总线</h2><h2 id="第4章-存储器"><a href="#第4章-存储器" class="headerlink" title="第4章 存储器"></a>第4章 存储器</h2><h2 id="第5章-输入输出系统"><a href="#第5章-输入输出系统" class="headerlink" title="第5章 输入输出系统"></a>第5章 输入输出系统</h2><h3 id="5-1-概述"><a href="#5-1-概述" class="headerlink" title="5.1 概述"></a>5.1 概述</h3><h4 id="5-1-1-输入输出系统的发展状况"><a href="#5-1-1-输入输出系统的发展状况" class="headerlink" title="5.1.1 输入输出系统的发展状况"></a>5.1.1 输入输出系统的发展状况</h4><ol>
 <li>早期阶段: 分散连接, CPU和I/O设备串行工作, 程序查询方式</li>
 <li>接口模块和DMA阶段: 总线连接, CPU和I/O设备并行工作, 分为中断方式和DMA方式</li>
 <li>具有通道结构的阶段</li>
@@ -545,7 +623,7 @@ mjx-container[display="true"] + br {
                         
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-05-24</span>
+                    <span>最后编辑：2021-05-25</span>
                     </div>
                 </div>
             </footer>

@@ -15,16 +15,16 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="实验一 排序 问题及解决方案:  随机数生成: 用a[i]&#x3D;[i],random_shuffle代替简单rand生成所需数据集 时间统计错误: 先是数组复制有误, 导致第二和第三次排序的数组是已排好的数组; 然后是编译时加上-O2可获得预期结果   代码:   123456789101112131415161718192021222324252627282930313233343536373839">
+  <meta name="description" content="实验一 排序 问题及解决方案:  随机数生成: 用a[i]&#x3D;i,random_shuffle代替简单rand生成所需数据集 时间统计错误: 先是数组复制有误, 导致第二和第三次排序的数组是已排好的数组; 然后是编译时加上-O2可获得预期结果   代码:   12345678910111213141516171819202122232425262728293031323334353637383940">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法实验">
 <meta property="og:url" content="https://7att1ce.github.io/2021/05/25/%E7%AE%97%E6%B3%95%E5%AE%9E%E9%AA%8C/">
 <meta property="og:site_name" content="7att1ce&#39;s blog">
-<meta property="og:description" content="实验一 排序 问题及解决方案:  随机数生成: 用a[i]&#x3D;[i],random_shuffle代替简单rand生成所需数据集 时间统计错误: 先是数组复制有误, 导致第二和第三次排序的数组是已排好的数组; 然后是编译时加上-O2可获得预期结果   代码:   123456789101112131415161718192021222324252627282930313233343536373839">
+<meta property="og:description" content="实验一 排序 问题及解决方案:  随机数生成: 用a[i]&#x3D;i,random_shuffle代替简单rand生成所需数据集 时间统计错误: 先是数组复制有误, 导致第二和第三次排序的数组是已排好的数组; 然后是编译时加上-O2可获得预期结果   代码:   12345678910111213141516171819202122232425262728293031323334353637383940">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://7att1ce.github.io/null">
 <meta property="article:published_time" content="2021-05-25T02:46:47.000Z">
-<meta property="article:modified_time" content="2021-05-25T03:57:06.557Z">
+<meta property="article:modified_time" content="2021-05-25T14:53:10.884Z">
 <meta property="article:author" content="7att1ce">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://7att1ce.github.io/null">
@@ -167,14 +167,14 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1621915026557"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1621954390884"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
                 <h2 id="实验一-排序"><a href="#实验一-排序" class="headerlink" title="实验一 排序"></a>实验一 排序</h2><ul>
 <li><p>问题及解决方案:</p>
 <ul>
-<li>随机数生成: 用a[i]=[i],random_shuffle代替简单rand生成所需数据集</li>
+<li>随机数生成: 用a[i]=i,random_shuffle代替简单rand生成所需数据集</li>
 <li>时间统计错误: 先是数组复制有误, 导致第二和第三次排序的数组是已排好的数组; 然后是编译时加上-O2可获得预期结果</li>
 </ul>
 </li>
@@ -252,8 +252,8 @@
             const excerpt       = `实验一 排序
 问题及解决方案:
 
-随机数生成: 用a[i]=[i],random_shuffle代替简单rand生成所需数据集
-时间统计错误: 先是数组复制有误, 导致第二和第三次排序的数组是已排好的数组; 然后是编译时加上-O2可获...`;
+随机数生成: 用a[i]=i,random_shuffle代替简单rand生成所需数据集
+时间统计错误: 先是数组复制有误, 导致第二和第三次排序的数组是已排好的数组; 然后是编译时加上-O2可获得预...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
