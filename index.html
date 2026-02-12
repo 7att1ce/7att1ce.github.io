@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page | 个人导航</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        :root {
+            --md-sys-color-primary: #0061a4;
+            --md-sys-color-surface: #fdfbff;
+            --md-sys-color-on-surface: #1a1c1e;
+            --md-sys-color-surface-variant: #e0e2ec;
+            --md-sys-color-on-surface-variant: #44474e;
+            --md-sys-color-secondary-container: #dbe2f9;
+            --md-sys-color-outline: #74777f;
+            --md-transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --md-sys-color-primary: #d1e4ff;
+                --md-sys-color-surface: #111318;
+                --md-sys-color-on-surface: #e2e2e6;
+                --md-sys-color-surface-variant: #44474e;
+                --md-sys-color-on-surface-variant: #c4c6d0;
+                --md-sys-color-secondary-container: #3e4759;
+            }
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin: 40px 0 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        /* 副标题样式 */
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--md-sys-color-on-surface-variant);
+            /* 使用变体色，更显简约 */
+            margin-top: 8px;
+            /* 与主标题的间距 */
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        /* 搜索区域 */
+        .search-area {
+            width: 100%;
+            max-width: 720px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .search-container {
+            width: 100%;
+            position: relative;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 18px 24px 18px 64px;
+            border-radius: 32px;
+            border: none;
+            background-color: var(--md-sys-color-surface-variant);
+            color: var(--md-sys-color-on-surface);
+            font-size: 1.1rem;
+            outline: none;
+            box-sizing: border-box;
+            transition: var(--md-transition);
+        }
+
+        #search-input:focus {
+            background-color: var(--md-sys-color-surface);
+            box-shadow: 0 0 0 2px var(--md-sys-color-primary);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--md-sys-color-on-surface-variant);
+        }
+
+        /* 搜索引擎切换器 */
+        .engine-selector {
+            display: flex;
+            gap: 8px;
+            background: var(--md-sys-color-surface-variant);
+            padding: 4px;
+            border-radius: 20px;
+        }
+
+        .engine-chip {
+            padding: 6px 16px;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--md-transition);
+            border: none;
+            background: transparent;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+
+        .engine-chip.active {
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-surface);
+        }
+
+        /* 网格布局 */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 16px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .nav-card {
+            background-color: var(--md-sys-color-surface-variant);
+            padding: 24px 12px;
+            border-radius: 24px;
+            text-decoration: none;
+            color: var(--md-sys-color-on-surface);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: var(--md-transition);
+            text-align: center;
+        }
+
+        .nav-card:hover {
+            background-color: var(--md-sys-color-secondary-container);
+            transform: scale(1.05);
+        }
+
+        .nav-card .icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+            color: var(--md-sys-color-primary);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 40px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 600px) {
+            .nav-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Home Page</h1>
+        <p class="subtitle">个人主页 (施工中🏗️)</p>
+    </header>
+
+    <div class="search-area">
+        <div class="search-container">
+            <span class="material-symbols-outlined search-icon" id="current-engine-icon">search</span>
+            <input type="search" id="search-input" placeholder="输入并回车搜索..." autocomplete="off">
+        </div>
+
+        <div class="engine-selector">
+            <button class="engine-chip active" data-engine="bing">Bing</button>
+            <button class="engine-chip" data-engine="google">Google</button>
+            <button class="engine-chip" data-engine="github">GitHub</button>
+        </div>
+    </div>
+
+    <main class="nav-grid" id="link-container"></main>
+
+    <footer>© 2026 Crafted with Material 3 by Lattice</footer>
+
+    <script>
+        // 1. 数据配置
+        const NAV_DATA = [
+            { name: 'GitHub', url: 'https://github.com/7att1ce', icon: 'terminal' },
+            { name: 'Blog', url: 'https://7att1ce.github.io/blog/', icon: 'format_image_right' },
+            { name: 'OSU! Skin', url: 'https://github.com/7att1ce/osu-skin/releases', icon: 'format_paint' }
+        ];
+
+        const ENGINES = {
+            bing: "https://www.bing.com/search?q=",
+            google: "https://www.google.com/search?q=",
+            github: "https://github.com/search?q="
+        };
+
+        let currentEngine = 'bing'; // 默认设为 Bing
+
+        // 2. 元素获取
+        const container = document.getElementById('link-container');
+        const searchInput = document.getElementById('search-input');
+        const engineButtons = document.querySelectorAll('.engine-chip');
+
+        // 3. 渲染书签
+        function renderLinks(data) {
+            container.innerHTML = data.map(item => `
+                <a href="${item.url}" class="nav-card" target="_blank">
+                    <span class="material-symbols-outlined icon">${item.icon}</span>
+                    <span>${item.name}</span>
+                </a>
+            `).join('');
+        }
+
+        // 4. 事件监听
+        // 切换搜索引擎
+        engineButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                engineButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentEngine = btn.dataset.engine;
+                searchInput.placeholder = `在 ${btn.innerText} 中搜索...`;
+            });
+        });
+
+        // 搜索过滤与回车跳转
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = NAV_DATA.filter(item => item.name.toLowerCase().includes(term));
+            renderLinks(filtered);
+        });
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && searchInput.value.trim() !== "") {
+                const query = encodeURIComponent(searchInput.value);
+                window.location.href = ENGINES[currentEngine] + query;
+            }
+        });
+
+        // 初始化
+        renderLinks(NAV_DATA);
+    </script>
+</body>
+
+</html>
